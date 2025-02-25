@@ -1,14 +1,10 @@
 captainVersion: 4
 services:
-    $$cap_appname-wintercms:
+    $$cap_appname:
         image: ghcr.io/mpo-web-consulting/wintercms:$$cap_wintercms_version
         volumes:
-            - $$cap_appname-wintercms-env:/var/www/html/.env
-            - $$cap_appname-wintercms-plugins:/var/www/html/plugins
-            - $$cap_appname-wintercms-storage-app:/var/www/html/storage/app
-            - $$cap_appname-wintercms-storage-logs:/var/www/html/storage/logs
-            - $$cap_appname-wintercms-database:/var/www/html/storage/database.sqlite
-            - $$cap_appname-wintercms-themes:/var/www/html/themes
+            - $$cap_appname-storage:/var/www/html/storage
+            - $$cap_appname-themes:/var/www/html/themes
         restart: always
         environment:
             TZ: '$$cap_TZ'
@@ -32,9 +28,9 @@ caproverOneClickApp:
             Diese App deployt WinterCMS, eine dockerisierte Version von Winter CMS.
             Konfiguriere die benötigten Parameter und klicke auf Weiter.
         end: >-
-            WinterCMS ist deployed und erreichbar als $$cap_appname-wintercms.
+            WinterCMS ist deployed und erreichbar als $$cap_appname.
             HTTPS erfolgt über die externe SSL-Terminierung von CapRover.
     displayName: WinterCMS
     isOfficial: false
     description: 'Deploye WinterCMS – eine dockerisierte Version von Winter CMS (PHP, Composer, Winter core und Abhängigkeiten).'
-    documentation: 'https://github.com/MPO-Web-Consulting/docker-wintercms'
+    documentation: 'https://github.com/MPO-Web-Consulting/docker'

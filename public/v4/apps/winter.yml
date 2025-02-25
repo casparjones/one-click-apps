@@ -13,8 +13,8 @@ services:
             FWD_REMOTE_IP: 'true'
             INIT_WINTER: 'true'
             LINK_POLICY: 'true'
-            APP_URL: "https://$$cap_app_subdomain.$$cap_captain_root_domain"
-            ASSET_URL: "https://$$cap_app_subdomain.$$cap_captain_root_domain/assets"
+            APP_URL: https://$$cap_appname.$$cap_root_domain
+            ASSET_URL: https://$$cap_appname.$$cap_root_domain
 
 caproverOneClickApp:
     variables:

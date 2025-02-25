@@ -15,6 +15,7 @@ services:
             LINK_POLICY: 'true'
             APP_URL: https://$$cap_appname.$$cap_root_domain
             ASSET_URL: https://$$cap_appname.$$cap_root_domain
+            CMS_ADMIN_PASSWORD: $$cap_gen_random_hex(8)
 
 caproverOneClickApp:
     variables:
@@ -33,7 +34,7 @@ caproverOneClickApp:
             Konfiguriere die benötigten Parameter und klicke auf Weiter.
         end: >-
             WinterCMS ist deployed und erreichbar als $$cap_appname.
-            Wichtig: aktiviere HTTPS in der Apps Config manuell.
+            Wichtig: aktiviere HTTPS in der Apps Config manuell. Das admin Passwort findest du im Environment Tab
     displayName: WinterCMS
     isOfficial: false
     description: 'Deploye WinterCMS – eine dockerisierte Version von Winter CMS (PHP, Composer, Winter core und Abhängigkeiten).'
